@@ -35,6 +35,8 @@ module.exports = {
     '@typescript-eslint/explicit-function-return-type': [0],
     '@typescript-eslint/no-use-before-define': [0],
     '@typescript-eslint/no-var-requires': [0],
+    '@typescript-eslint/no-unused-vars': ['warn'],
+    'no-unused-vars': ['warn'],
     'max-classes-per-file': [0]
   }
 }

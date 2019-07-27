@@ -4,14 +4,14 @@ import { Component, FunctionComponentType } from './component'
 export enum ELEMENT_TYPE {
   HTML_ELEMENT = 1,
   CLASS_COMPONENT = 1 << 1,
-  FUNCTION_COMPONENT = 1 << 2,
+  FUNCTION_COMPONENT = 1 << 2
 }
 
 export enum CHILD_TYPE {
   TEXT = 1,
   OBJECT = 1 << 1,
   LIST = 1 << 2,
-  NO_CHILDREN = 1 << 3,
+  NO_CHILDREN = 1 << 3
 }
 
 export type PropType<P extends object = {}> = P &
@@ -41,7 +41,7 @@ export function createElement<P extends object = {}>(
     elFlag = ELEMENT_TYPE.HTML_ELEMENT
   } else if (typeof tag === 'function') {
     elFlag = ELEMENT_TYPE.FUNCTION_COMPONENT
-  } else if (tag instanceof Component) {
+  } else if (tag as object instanceof Component) {
     elFlag = ELEMENT_TYPE.CLASS_COMPONENT
   } else {
     throw 'invalid tag'
@@ -63,7 +63,7 @@ export function createElement<P extends object = {}>(
     elFlag,
     props,
     children: children || null,
-    childFlag,
+    childFlag
   }
 }
 
