@@ -1,0 +1,25 @@
+.tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+
+  width: 3%;
+  height: 50px;
+  right: auto;
+  left: -2.5%;
+
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-radius: 0 0 0 5px;
+  -webkit-border-radius: 0 0 0 5px;
+  -moz-border-radius: 0 0 0 5px;
+}
+.tree li.two-step::after {
+  top: -100px;
+  height: 150px;
+}
+
+.tree li.three-step::after {
+  top: -180px;
+  height: 230px;
+}
